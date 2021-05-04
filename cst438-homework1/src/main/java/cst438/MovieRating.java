@@ -1,5 +1,5 @@
 /**
- * Movie Rating class for creating the rating objects
+ * Movie Rating class. Used to create movie rating objects to be stored in the DB
  */
 
 package cst438;
@@ -8,6 +8,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,6 +25,8 @@ public class MovieRating {
   private String title;
 
   @NotNull
+  @Max(5)
+  @Min(1)
   private int rating;
 
   @NotNull
